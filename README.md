@@ -8,18 +8,10 @@ SpinLatticeSimulation is a comprehensive Monte Carlo simulation tool for studyin
 - [README.md](README.md) — this file.
 
 ## Model (brief)
-- Nearest-neighbor energy:
-$$
-E = -J \sum_{\langle i,j\rangle} s_i s_j
-$$
-- Magnetization:
-$$
-M = \frac{1}{N^2}\sum_{i,j} s_{ij}
-$$
-- Metropolis acceptance (default, configurable in [`f`](helpers.py)):
-$$
-P = \exp\!\left(-\frac{\Delta E}{K}\right)
-$$
+
+- Nearest-neighbor energy: `E = -J Σ_<i,j> s_i s_j`
+- Magnetization: `M = (1/N^2) Σ_i,j s_ij`
+- Metropolis acceptance (default, configurable in [helpers.py](helpers.py)): `P = exp(-ΔE / K)`
 
 ## Usage
 
@@ -54,3 +46,11 @@ At low KT, spins align more uniformly, while at high KT, spins appear random.
 **Spin Configurations**: Examples of initial and final lattice states for selected parameters.
 
 ![image](https://github.com/user-attachments/assets/9aa2a215-8cd0-4c5e-9d8f-58e8ffa409ca)
+
+The panels above show the evolution of the 2D spin lattice for \( J = 0.9 \):
+
+- **Left:** Random initial spin configuration.  
+- **Middle:** Final configuration at low temperature (\( KT = 0.5 \)) — spins align uniformly, forming an ordered **ferromagnetic** state.  
+- **Right:** Final configuration at high temperature (\( KT = 3 \)) — thermal agitation randomizes spins, producing a **paramagnetic** (disordered) state.  
+
+These snapshots visually demonstrate the **phase transition** from order to disorder as temperature increases.
